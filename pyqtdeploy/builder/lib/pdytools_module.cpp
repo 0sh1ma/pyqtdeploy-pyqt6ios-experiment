@@ -406,7 +406,7 @@ static int qrcimporter_init(PyObject *self, PyObject *args, PyObject *kwds)
 
     ((QrcImporter *)self)->path_parts = new QStringList(
             q_path->mid(2, q_path->length() - 3).split(QChar('/'),
-                    QString::SkipEmptyParts));
+                    Qt::SkipEmptyParts));
 
     return 0;
 }

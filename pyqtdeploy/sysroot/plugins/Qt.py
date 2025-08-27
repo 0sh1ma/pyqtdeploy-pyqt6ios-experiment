@@ -167,7 +167,8 @@ class QtComponent(AbstractQtComponent):
         """ Verify the component. """
 
         # Do some basic version checks.
-        if self.version >= 6:
+        #osh if self.version >= 6:
+        if self.version >= 7:
             self.unsupported()
 
         if self.version < (5, 12):

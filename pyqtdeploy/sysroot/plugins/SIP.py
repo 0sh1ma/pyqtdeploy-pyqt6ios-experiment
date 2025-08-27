@@ -40,6 +40,17 @@ class SIPComponent(Component):
     # The version will be determined dynamically.
     version_is_optional = True
 
+#osh
+    def insensitive_glob(self,pattern):
+           return glob.glob(
+            ''.join([
+                '[' + c.lower() + c.upper() + ']'
+                if c.isalpha() else c
+                for c in pattern
+            ])
+           )
+
+
     def get_archive(self):
         """ Return the pathname of a local copy of the source archive. """
 
@@ -50,7 +61,9 @@ class SIPComponent(Component):
         # Work out what the name was.
         pattern = '{}-{}.*.tar.gz'.format(
                 self.module_name.replace('.', '_'), self.abi_major_version)
-        archives = glob.glob(pattern)
+      #osh   archives = glob.glob(pattern)
+        archives = self.insensitive_glob(pattern)
+
 
         if len(archives) == 0:
             self.error("sip-module didn't create an sdist")

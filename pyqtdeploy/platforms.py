@@ -177,7 +177,7 @@ class Architecture:
                 size = '64' if parts[1] == 'x86_64' else '32'
             elif base_platform == 'macosx':
                 name = 'macos'
-                size = '64' if parts[2] in ('x86_64', 'universal2') else '32'
+                size = '64' if parts[2] in ('x86_64', 'universal2','arm64') else '32'
             elif base_platform in ('win32', 'win'):
                 name = 'win'
 

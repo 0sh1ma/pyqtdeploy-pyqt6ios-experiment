@@ -100,7 +100,8 @@ win32 {
 
     QMAKE_CFLAGS_RELEASE = -O3
     QMAKE_CFLAGS += -fwrapv
-
+#osh
+    QMAKE_CFLAGS += -Wno-implicit-function-declaration
     greaterThan(PY_MINOR_VERSION, 10) {
         QMAKE_CFLAGS += -std=c11
     } else {

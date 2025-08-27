@@ -172,6 +172,8 @@ class Builder:
         self._write_qmake(application_name, parts, job_writer, opt,
                 resource_names, python)
 
+        #osh
+        shutil.copy(job_filename, '/tmp/jobfile.txt')
         # Run the freeze jobs.
         job_file.close()
 
@@ -667,6 +669,9 @@ int main(int argc, char **argv)
         # Generate QT.
         if qmake_qt:
             f.write('QT += %s\n' % ' '.join(qmake_qt))
+
+        #osh 
+        f.write('QT += core5compat\n' )
 
         # Generate CONFIG.
         config = ['warn_off']

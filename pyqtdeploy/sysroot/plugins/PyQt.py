@@ -33,118 +33,118 @@ from ... import (AbstractPyQtComponent, ComponentOption, ExtensionModule,
 
 # All the parts that can be provided by the component.
 _ALL_PARTS = {
-    'PyQt5': PythonModule(deps='Python:pkgutil'),
-    'PyQt5.QAxContainer':
-        ExtensionModule(target='win', deps='PyQt5.QtWidgets',
+    'PyQt6': PythonModule(deps='Python:pkgutil'),
+    'PyQt6.QAxContainer':
+        ExtensionModule(target='win', deps='PyQt6.QtWidgets',
                 libs='-lQAxContainer', qmake_qt='axcontainer'),
-    'PyQt5.Qt': ExtensionModule(deps='PyQt5', libs='-lQt'),
-    'PyQt5.QtAndroidExtras':
-        ExtensionModule(target='android', deps='PyQt5.QtCore',
+    'PyQt6.Qt': ExtensionModule(deps='PyQt6', libs='-lQt'),
+    'PyQt6.QtAndroidExtras':
+        ExtensionModule(target='android', deps='PyQt6.QtCore',
                 libs='-lQtAndroidExtras', qmake_qt='androidextras'),
-    'PyQt5.QtBluetooth':
-        ExtensionModule(deps='PyQt5.QtCore', libs='-lQtBluetooth',
+    'PyQt6.QtBluetooth':
+        ExtensionModule(deps='PyQt6.QtCore', libs='-lQtBluetooth',
                 qmake_qt='bluetooth'),
-    'PyQt5.QtCore':
-        ExtensionModule(deps=('SIP:PyQt5.sip', 'PyQt5'), libs='-lQtCore'),
-    'PyQt5.QtDBus':
-        ExtensionModule(deps='PyQt5.QtCore', libs='-lQtDBus', qmake_qt='dbus'),
-    'PyQt5.QtGui': ExtensionModule(deps='PyQt5.QtCore', libs='-lQtGui'),
-    'PyQt5.QtHelp':
-        ExtensionModule(deps='PyQt5.QtWidgets', libs='-lQtHelp',
+    'PyQt6.QtCore':
+        ExtensionModule(deps=('SIP:PyQt6.sip', 'PyQt6'), libs='-lQtCore'),
+    'PyQt6.QtDBus':
+        ExtensionModule(deps='PyQt6.QtCore', libs='-lQtDBus', qmake_qt='dbus'),
+    'PyQt6.QtGui': ExtensionModule(deps='PyQt6.QtCore', libs='-lQtGui'),
+    'PyQt6.QtHelp':
+        ExtensionModule(deps='PyQt6.QtWidgets', libs='-lQtHelp',
                 qmake_qt='help'),
-    'PyQt5.QtLocation':
-        ExtensionModule(deps='PyQt5.QtPositioning', libs='-lQtLocation',
+    'PyQt6.QtLocation':
+        ExtensionModule(deps='PyQt6.QtPositioning', libs='-lQtLocation',
                 qmake_qt='location'),
-    'PyQt5.QtMacExtras':
-        ExtensionModule(target='ios|macos', deps='PyQt5.QtGui',
+    'PyQt6.QtMacExtras':
+        ExtensionModule(target='ios|macos', deps='PyQt6.QtGui',
                 libs='-lQtMacExtras', qmake_qt='macextras'),
-    'PyQt5.QtMultimedia':
-        ExtensionModule(deps=('PyQt5.QtGui', 'PyQt5.QtNetwork'),
+    'PyQt6.QtMultimedia':
+        ExtensionModule(deps=('PyQt6.QtGui', 'PyQt6.QtNetwork'),
                 libs='-lQtMultimedia', qmake_qt='multimedia'),
-    'PyQt5.QtMultimediaWidgets':
-        ExtensionModule(deps=('PyQt5.QtMultimedia', 'PyQt5.QtWidgets'),
+    'PyQt6.QtMultimediaWidgets':
+        ExtensionModule(deps=('PyQt6.QtMultimedia', 'PyQt6.QtWidgets'),
                 libs='-lQtMultimediaWidgets', qmake_qt='multimediawidgets'),
-    'PyQt5.QtNetwork':
-        ExtensionModule(deps='PyQt5.QtCore', libs='-lQtNetwork',
+    'PyQt6.QtNetwork':
+        ExtensionModule(deps='PyQt6.QtCore', libs='-lQtNetwork',
                 qmake_qt='network'),
-    'PyQt5.QtNetworkAuth':
-        ExtensionModule(deps='PyQt5.QtNetwork', libs='-lQtNetworkAuth',
+    'PyQt6.QtNetworkAuth':
+        ExtensionModule(deps='PyQt6.QtNetwork', libs='-lQtNetworkAuth',
                 qmake_qt=('network', 'networkauth')),
-    'PyQt5.QtNfc':
-        ExtensionModule(deps='PyQt5.QtCore', libs='-lQtNfc', qmake_qt='nfc'),
-    'PyQt5.QtOpenGL':
-        ExtensionModule(deps='PyQt5.QtWidgets', libs='-lQtOpenGL',
+    'PyQt6.QtNfc':
+        ExtensionModule(deps='PyQt6.QtCore', libs='-lQtNfc', qmake_qt='nfc'),
+    'PyQt6.QtOpenGL':
+        ExtensionModule(deps='PyQt6.QtWidgets', libs='-lQtOpenGL',
                 qmake_qt='opengl'),
-    'PyQt5.QtPositioning':
-        ExtensionModule(deps='PyQt5.QtCore', libs='-lQtPositioning',
+    'PyQt6.QtPositioning':
+        ExtensionModule(deps='PyQt6.QtCore', libs='-lQtPositioning',
                 qmake_qt='positioning'),
-    'PyQt5.QtPrintSupport':
-        ExtensionModule(target='!ios', deps='PyQt5.QtWidgets',
+    'PyQt6.QtPrintSupport':
+        ExtensionModule(target='!ios', deps='PyQt6.QtWidgets',
                 libs='-lQtPrintSupport', qmake_qt='printsupport'),
-    'PyQt5.QtQml':
-        ExtensionModule(deps='PyQt5.QtNetwork', libs='-lQtQml',
+    'PyQt6.QtQml':
+        ExtensionModule(deps='PyQt6.QtNetwork', libs='-lQtQml',
                 qmake_qt='qml'),
-    'PyQt5.QtQuick':
-        ExtensionModule(deps=('PyQt5.QtGui', 'PyQt5.QtQml'), libs='-lQtQuick',
+    'PyQt6.QtQuick':
+        ExtensionModule(deps=('PyQt6.QtGui', 'PyQt6.QtQml'), libs='-lQtQuick',
                 qmake_qt='quick'),
-    'PyQt5.QtQuick3D':
+    'PyQt6.QtQuick3D':
         ExtensionModule(min_version=(5, 15),
-                deps=('PyQt5.QtGui', 'PyQt5.QtQml'), libs='-lQtQuick3D',
+                deps=('PyQt6.QtGui', 'PyQt6.QtQml'), libs='-lQtQuick3D',
                 qmake_qt='quick3d'),
-    'PyQt5.QtQuickWidgets':
-        ExtensionModule(deps=('PyQt5.QtQuick', 'PyQt5.QtWidgets'),
+    'PyQt6.QtQuickWidgets':
+        ExtensionModule(deps=('PyQt6.QtQuick', 'PyQt6.QtWidgets'),
                 libs='-lQtQuickWidgets', qmake_qt='quickwidgets'),
-    'PyQt5.QtRemoteObjects':
-        ExtensionModule(deps='PyQt5.QtCore', libs='-lQtRemoteObjects',
+    'PyQt6.QtRemoteObjects':
+        ExtensionModule(deps='PyQt6.QtCore', libs='-lQtRemoteObjects',
                 qmake_qt='remoteobjects'),
-    'PyQt5.QtSensors':
-        ExtensionModule(deps='PyQt5.QtCore', libs='-lQtSensors',
+    'PyQt6.QtSensors':
+        ExtensionModule(deps='PyQt6.QtCore', libs='-lQtSensors',
                 qmake_qt='sensors'),
-    'PyQt5.QtSerialPort':
-        ExtensionModule(deps='PyQt5.QtCore', libs='-lQtSerialPort',
+    'PyQt6.QtSerialPort':
+        ExtensionModule(deps='PyQt6.QtCore', libs='-lQtSerialPort',
                 qmake_qt='serialport'),
-    'PyQt5.QtSql':
-        ExtensionModule(deps='PyQt5.QtWidgets', libs='-lQtSql',
+    'PyQt6.QtSql':
+        ExtensionModule(deps='PyQt6.QtWidgets', libs='-lQtSql',
                 qmake_qt='sql'),
-    'PyQt5.QtSvg':
-        ExtensionModule(deps='PyQt5.QtWidgets', libs='-lQtSvg',
+    'PyQt6.QtSvg':
+        ExtensionModule(deps='PyQt6.QtWidgets', libs='-lQtSvg',
                 qmake_qt='svg'),
-    'PyQt5.QtTest':
-        ExtensionModule(deps='PyQt5.QtWidgets', libs='-lQtTest',
+    'PyQt6.QtTest':
+        ExtensionModule(deps='PyQt6.QtWidgets', libs='-lQtTest',
                 qmake_qt='testlib'),
-    'PyQt5.QtTextToSpeech':
-        ExtensionModule(min_version=(5, 15, 1), deps='PyQt5.QtCore',
+    'PyQt6.QtTextToSpeech':
+        ExtensionModule(min_version=(5, 15, 1), deps='PyQt6.QtCore',
                 libs='-lQtTextToSpeech', qmake_qt='texttospeech'),
-    'PyQt5.QtWebChannel':
-        ExtensionModule(deps='PyQt5.QtCore', libs='-lQtWebChannel',
+    'PyQt6.QtWebChannel':
+        ExtensionModule(deps='PyQt6.QtCore', libs='-lQtWebChannel',
                 qmake_qt='webchannel'),
-    'PyQt5.QtWebSockets':
-        ExtensionModule(deps='PyQt5.QtNetwork', libs='-lQtWebSockets',
+    'PyQt6.QtWebSockets':
+        ExtensionModule(deps='PyQt6.QtNetwork', libs='-lQtWebSockets',
                 qmake_qt='websockets'),
-    'PyQt5.QtWidgets':
-        ExtensionModule(deps='PyQt5.QtGui', libs='-lQtWidgets',
+    'PyQt6.QtWidgets':
+        ExtensionModule(deps='PyQt6.QtGui', libs='-lQtWidgets',
                 qmake_qt='widgets'),
-    'PyQt5.QtWinExtras':
-        ExtensionModule(target='win', deps='PyQt5.QtWidgets',
+    'PyQt6.QtWinExtras':
+        ExtensionModule(target='win', deps='PyQt6.QtWidgets',
                 libs='-lQtWinExtras', qmake_qt='winextras'),
-    'PyQt5.QtX11Extras':
-        ExtensionModule(target='linux', deps='PyQt5.QtCore',
+    'PyQt6.QtX11Extras':
+        ExtensionModule(target='linux', deps='PyQt6.QtCore',
                 libs='-lQtX11Extras', qmake_qt='x11extras'),
-    'PyQt5.QtXml':
-        ExtensionModule(deps='PyQt5.QtCore', libs='-lQtXml', qmake_qt='xml'),
-    'PyQt5.QtXmlPatterns':
-        ExtensionModule(deps='PyQt5.QtNetwork', libs='-lQtXmlPatterns',
+    'PyQt6.QtXml':
+        ExtensionModule(deps='PyQt6.QtCore', libs='-lQtXml', qmake_qt='xml'),
+    'PyQt6.QtXmlPatterns':
+        ExtensionModule(deps='PyQt6.QtNetwork', libs='-lQtXmlPatterns',
                 qmake_qt='xmlpatterns'),
-    'PyQt5._QOpenGLFunctions_2_0':
-        ExtensionModule(deps='PyQt5.QtGui', libs='-l_QOpenGLFunctions_2_0'),
-    'PyQt5._QOpenGLFunctions_2_1':
-        ExtensionModule(deps='PyQt5.QtGui', libs='-l_QOpenGLFunctions_2_1'),
-    'PyQt5._QOpenGLFunctions_4_1_Core':
-        ExtensionModule(deps='PyQt5.QtGui',
+    'PyQt6._QOpenGLFunctions_2_0':
+        ExtensionModule(deps='PyQt6.QtGui', libs='-l_QOpenGLFunctions_2_0'),
+    'PyQt6._QOpenGLFunctions_2_1':
+        ExtensionModule(deps='PyQt6.QtGui', libs='-l_QOpenGLFunctions_2_1'),
+    'PyQt6._QOpenGLFunctions_4_1_Core':
+        ExtensionModule(deps='PyQt6.QtGui',
                 libs='-l_QOpenGLFunctions_4_1_Core'),
-    'PyQt5._QOpenGLFunctions_ES2':
-        ExtensionModule(deps='PyQt5.QtGui', libs='-l_QOpenGLFunctions_ES2'),
-    'PyQt5.uic':
+    'PyQt6._QOpenGLFunctions_ES2':
+        ExtensionModule(deps='PyQt6.QtGui', libs='-l_QOpenGLFunctions_ES2'),
+    'PyQt6.uic':
         PythonPackage(
                 deps=('Python:io', 'Python:logging', 'Python:os', 'Python:re',
                         'Python:traceback', 'Python:xml.etree.ElementTree'),
@@ -163,9 +163,11 @@ class PyQtComponent(AbstractPyQtComponent):
         """ Return the filename of the source archive. """
 
         if self._license_file is not None:
-            return 'PyQt5_commercial-{}.tar.gz'.format(self.version)
+            #osh return 'PyQt6_commercial-{}.tar.gz'.format(self.version)
+            return 'PyQt6_commercial-{}.tar.gz'.format(self.version)
 
-        return 'PyQt5-{}.tar.gz'.format(self.version)
+        #osh return 'PyQt6-{}.tar.gz'.format(self.version)
+        return 'PyQt6-{}.tar.gz'.format(self.version)
 
     def get_archive_urls(self):
         """ Return the list of URLs where the source archive might be
@@ -175,7 +177,7 @@ class PyQtComponent(AbstractPyQtComponent):
         if self._license_file is not None:
             return super().get_archive_urls()
 
-        return self.get_pypi_urls('PyQt5')
+        return self.get_pypi_urls('PyQt6')
 
     def get_options(self):
         """ Return a list of ComponentOption objects that define the components
@@ -189,9 +191,9 @@ class PyQtComponent(AbstractPyQtComponent):
                         help="The features that are disabled."))
 
         valid_modules = sorted(
-                [name[len('PyQt5.'):]
+                [name[len('PyQt6.'):]
                         for name in _ALL_PARTS
-                                if name not in ('PyQt5', 'PyQt5.uic')])
+                                if name not in ('PyQt6', 'PyQt6.uic')])
 
         options.append(
                 ComponentOption('installed_modules', type=list, required=True,
@@ -309,19 +311,19 @@ class PyQtComponent(AbstractPyQtComponent):
         """ The dict of parts provided by the component. """
 
         parts = {
-            'PyQt5': _ALL_PARTS['PyQt5'],
-            'PyQt5.uic': _ALL_PARTS['PyQt5.uic'],
+            'PyQt6': _ALL_PARTS['PyQt6'],
+            'PyQt6.uic': _ALL_PARTS['PyQt6.uic'],
         }
 
         for name in self.installed_modules:
-            name = 'PyQt5.' + name
+            name = 'PyQt6.' + name
 
             part = _ALL_PARTS[name]
 
-            if name == 'PyQt5.QtCore':
+            if name == 'PyQt6.QtCore':
                 lib_dir = os.path.join(
                         self.get_component('Python').target_sitepackages_dir,
-                        'PyQt5')
+                        'PyQt6')
 
                 part.libs = ('-L' + lib_dir,) + part.libs
 
@@ -371,17 +373,25 @@ class PyQtComponent(AbstractPyQtComponent):
         # provided by the SIP component.
         sip = self.get_component('SIP')
 
-        sip_module = 'PyQt5.sip'
+        #osh sip_module = 'PyQt6.sip'
+        sip_module = 'PyQt6.sip'
 
+        print(sip.module_name) #osh
+        print("----")
+        print(sip_module) #osh
+        
         if sip.module_name != sip_module:
-            component.error(
+            #osh  component.error(
+            self.error(
                     "sip module '{0}' is required but '{1}' is provided".format(
                             sip_module, sip.module_name))
 
-        abi_major_version = 12
+        #osh abi_major_version = 12
+        abi_major_version = 13
 
         if abi_major_version != sip.abi_major_version:
-            component.error(
+            #osh component.error(
+            self.error(
                     "sip module ABI v{0} is required but v{1} is provided".format(
                             abi_major_version, sip.abi_major_version))
 
