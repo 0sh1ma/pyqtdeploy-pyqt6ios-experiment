@@ -1,0 +1,93 @@
+=================
+ Developer Notes
+=================
+
+These are various notes, instructions and reminders for the pyqtdeploy
+developer.
+
+
+Updating pyqtdeploy When New Versions of Python are Released
+============================================================
+
+Run the ``diff-py-version.py`` script for the new version of Python::
+
+    ./diff-py-version.py --sources /path/to/Python/sources X.Y.Z
+
+This will generate a number of standard diffs in the current directory.
+
+
+python.py
+---------
+
+Add the new Python release to the appropriate minor version (the LATEST_*
+attributes).
+
+
+standard_library.py
+-------------------
+
+Check the ``Lib`` diff for any new or removed ``import`` statements and update
+the standard library meta-data accordingly.
+
+
+pyconfig.h
+----------
+
+Check the ``PC/pyconfig.h`` diff for any changes.  If there are then copy it to
+the ``configurations/pyconfig`` directory with an appropriate version number.
+Edit the file, comment out ``#define WITH_DOC_STRINGS``, add
+``#define Py_NO_ENABLE_SHARED`` and replace the ``#define`` for
+``HAVE_DYNAMIC_LOADING`` with ``@PY_DYNAMIC_LOADING@``.
+
+Check the ``pyconfig.h.in`` diff for any new configuration items.  Add any new
+ones to ``pyconfig.py``.
+
+
+setup.py
+--------
+
+Check the ``setup.py`` diff for any changes and update the Python module
+meta-data accordingly.
+
+
+python.pro
+----------
+
+Check the ``Makefile`` diff:
+
+    compare the value of ``PARSER_OBJS`` with the value of ``PARSER_SOURCES``
+    in ``python.pro``
+
+    compare the value of ``OBJECT_OBJS`` with the value of ``OBJECT_SOURCES``
+    in ``python.pro``
+
+    compare the value of ``PYTHON_OBJS`` with the value of ``PYTHON_SOURCES``
+    in ``python.pro`` (ignoring ``frozen.o``)
+
+    compare the value of ``MODULE_OBJS`` with the value of ``MODULE_SOURCES``
+    in ``python.pro``
+
+    compare the value of ``MODOBJS`` with the value of ``MOD_SOURCES`` in
+    ``python.pro``.
+
+
+_bootstrap.py
+-------------
+
+Check the ``Lib/importlib/_bootstrap.py`` diff.  If there are any differences
+then copy it to the builder with a version dependent name.
+
+
+_bootstrap_external.py
+----------------------
+
+Check the ``Lib/importlib/_bootstrap_external.py`` diff.  If there are any
+differences then copy it to the builder with a version dependent name.  Update
+the copy with the pyqtdeploy additions (normally just appended to the file).
+
+
+getpath.h
+---------
+
+Check the ``Python/frozen_modules/getpath.h`` diff.  If there are any
+differences then copy it to the Python plugin with a version dependent name.

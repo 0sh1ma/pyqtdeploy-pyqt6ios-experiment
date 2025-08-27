@@ -1,0 +1,14 @@
+# Build a static sip module implementing ABI v12.
+
+[SIP]
+version = "12.9.1"
+module_name = "PyQt5.sip"
+
+
+[Python]
+version = "$PYTHON_VERSION"
+
+
+[Qt]
+version = "$QT_VERSION"
+install_from_source = false

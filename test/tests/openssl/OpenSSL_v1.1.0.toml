@@ -1,0 +1,17 @@
+# Build OpenSSL v1.1.0.  Python v3.7.0 to v3.7.3 must be used.
+
+[OpenSSL]
+version = "1.1.0h"
+
+
+[Python]
+version = "3.7.0"
+install_host_from_source = true
+
+[Python.win]
+install_host_from_source = false
+
+
+[Qt]
+version = "$QT_VERSION"
+install_from_source = false

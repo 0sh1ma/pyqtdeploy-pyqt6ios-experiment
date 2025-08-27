@@ -1,0 +1,26 @@
+# This is used to test packages provided by the wheel plugin.
+
+
+[certifi]
+version = "2021.10.8"
+wheel = "certifi-2021.10.8-py2.py3-none-any.whl"
+plugin = "wheel"
+dependencies = ["Python:importlib.resources", "Python:os"]
+exclusions = ["__main__.py"]
+
+
+[zlib]
+version = "1.2.12"
+
+[zlib.ios]
+version = ""
+install_from_source = false
+
+
+[Python]
+version = "$PYTHON_VERSION"
+
+
+[Qt]
+version = "$QT_VERSION"
+install_from_source = false
