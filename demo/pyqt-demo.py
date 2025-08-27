@@ -220,7 +220,7 @@ def create_fallback_code_view():
     from PyQt6.QtWidgets import QTextEdit
 
     view = QTextEdit(readOnly=True)
-    view.setPlainText(get_source_code())
+    view.setPlainText("this is test too..")
 
     return view
 
