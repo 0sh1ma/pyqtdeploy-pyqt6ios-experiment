@@ -15,7 +15,7 @@ install_from_source = false
 # Python ######################################################################
 
 [Python]
-version = "3.11.0"
+version = "3.10.0"
 install_host_from_source = true
 
 [Python.win]
@@ -25,7 +25,7 @@ install_host_from_source = false
 # PyQt ########################################################################
 
 [PyQt]
-version = "5.15.7"
+version = "6.9.1"
 
 [PyQt.android]
 disabled_features = ["PyQt_Desktop_OpenGL", "PyQt_Printer"]
@@ -35,9 +35,9 @@ installed_modules = ["QtCore", "QtGui", "QtNetwork", "QtWidgets",
 [PyQt.ios]
 disabled_features = ["PyQt_Desktop_OpenGL", "PyQt_MacOSXOnly",
         "PyQt_MacCocoaViewContainer", "PyQt_Printer", "PyQt_Process",
-        "PyQt_NotBootstrapped"]
-installed_modules = ["QtCore", "QtGui", "QtNetwork", "QtWidgets",
-        "QtMacExtras"]
+        "PyQt_NotBootstrapped", "PyQt_Vulkan"]
+installed_modules = ["QtCore", "QtGui",  "QtWidgets" 
+        ]
 
 [PyQt.linux]
 installed_modules = ["QtCore", "QtGui", "QtNetwork", "QtWidgets",
@@ -55,44 +55,44 @@ installed_modules = ["QtCore", "QtGui", "QtNetwork", "QtWidgets",
 
 # PyQt3D ######################################################################
 
-[PyQt3D]
-version = "5.15.5"
+#[PyQt3D]
+#version = "5.15.5"
 
 
 # PyQtChart ###################################################################
 
-[PyQtChart]
-version = "5.15.6"
+#[PyQtChart]
+#version = "5.15.6"
 
 
 # PyQtDataVisualization #######################################################
 
-[PyQtDataVisualization]
-version = "5.15.5"
+#[PyQtDataVisualization]
+#version = "5.15.5"
 
 
 # PyQtNetworkAuth #############################################################
 
-[PyQtNetworkAuth]
-version = "5.15.5"
+#[PyQtNetworkAuth]
+#version = "5.15.5"
 
 
 # PyQtPurchasing ##############################################################
 
-[PyQtPurchasing]
-version = "5.15.5"
+#[PyQtPurchasing]
+#version = "5.15.5"
 
 
 # QScintilla ##################################################################
 
-[QScintilla]
-version = "2.13.3"
+#[QScintilla]
+#version = "2.13.3"
 
 
 # Qt ##########################################################################
 
 [Qt]
-version = "5.15.2"
+version = "6.9.1"
 edition = "opensource"
 configure_options = ["-opengl", "desktop", "-no-dbus", "-qt-pcre"]
 skip = ["qtactiveqt", "qtconnectivity", "qtdoc", "qtgamepad", "qtlocation",
@@ -124,8 +124,8 @@ static_msvc_runtime = true
 # SIP #########################################################################
 
 [SIP]
-abi_major_version = 12
-module_name = "PyQt5.sip"
+abi_major_version = 13
+module_name = "PyQt6.sip"
 
 
 # zlib ########################################################################

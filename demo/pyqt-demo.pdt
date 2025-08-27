@@ -1,8 +1,8 @@
 version = 0
 sysroot = ""
 sysroots_dir = ""
-parts = [ "Python:ssl", "Python:sysconfig", "Python:zlib", "Python:importlib.resources", "PyQt:PyQt5.QtWidgets", "PyQtPurchasing:PyQt5.QtPurchasing", "PyQtDataVisualization:PyQt5.QtDataVisualization", "QScintilla:PyQt5.Qsci", "PyQtChart:PyQt5.QtChart", "PyQt3D:PyQt5.Qt3DCore", "PyQt:PyQt5.QtNetwork", "PyQt:PyQt5.QtAndroidExtras", "PyQt:PyQt5.QtX11Extras", "PyQt:PyQt5.QtWinExtras", "PyQt:PyQt5.QtMacExtras", "PyQtNetworkAuth:PyQt5.QtNetworkAuth",]
-
+#parts = [ "Python:ssl", "Python:sysconfig", "Python:zlib", "Python:importlib.resources", "PyQt:PyQt6.QtWidgets", "PyQtPurchasing:PyQt6.QtPurchasing", "PyQtDataVisualization:PyQt6.QtDataVisualization", "QScintilla:PyQt6.Qsci", "PyQtChart:PyQt6.QtChart", "PyQt3D:PyQt6.Qt3DCore", "PyQt:PyQt6.QtNetwork", "PyQt:PyQt6.QtAndroidExtras", "PyQt:PyQt6.QtX11Extras", "PyQt:PyQt6.QtWinExtras", "PyQt:PyQt6.QtMacExtras", "PyQtNetworkAuth:PyQt6.QtNetworkAuth",]
+parts = [ "Python:ssl", "Python:sysconfig", "Python:zlib", "Python:importlib.resources", "PyQt:PyQt6.QtWidgets",  "QScintilla:PyQt6.Qsci",]
 [Application]
 entry_point = ""
 is_console = false
