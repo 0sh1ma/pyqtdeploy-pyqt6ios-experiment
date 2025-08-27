@@ -9,9 +9,9 @@
 import sys
 import sysconfig
 
-from PyQt5.QtCore import PYQT_VERSION_STR, QT_VERSION_STR
-from PyQt5.QtGui import QStandardItem, QStandardItemModel
-from PyQt5.QtWidgets import (QApplication, QLabel, QTabWidget, QTreeView,
+from PyQt6.QtCore import PYQT_VERSION_STR, QT_VERSION_STR
+from PyQt6.QtGui import QStandardItem, QStandardItemModel
+from PyQt6.QtWidgets import (QApplication, QLabel, QTabWidget, QTreeView,
         QVBoxLayout, QWidget)
 
 try:
@@ -24,25 +24,25 @@ except ImportError:
 platform_module = "Not available"
 
 try:
-    import PyQt5.QtAndroidExtras
+    import PyQt6.QtAndroidExtras
     platform_module = 'QtAndroidExtras'
 except ImportError:
     pass
 
 try:
-    import PyQt5.QtMacExtras
+    import PyQt6.QtMacExtras
     platform_module = 'QtMacExtras'
 except ImportError:
     pass
 
 try:
-    import PyQt5.QtWinExtras
+    import PyQt6.QtWinExtras
     platform_module = 'QtWinExtras'
 except ImportError:
     pass
 
 try:
-    import PyQt5.QtX11Extras
+    import PyQt6.QtX11Extras
     platform_module = 'QtX11Extras'
 except ImportError:
     pass
@@ -52,37 +52,37 @@ except ImportError:
 optional_products = []
 
 try:
-    import PyQt5.Qt3DCore
+    import PyQt6.Qt3DCore
     optional_products.append("PyQt3D")
 except ImportError:
     pass
 
 try:
-    import PyQt5.QtChart
+    import PyQt6.QtChart
     optional_products.append("PyQtChart")
 except ImportError:
     pass
 
 try:
-    import PyQt5.QtDataVisualization
+    import PyQt6.QtDataVisualization
     optional_products.append("PyQtDataVisualization")
 except ImportError:
     pass
 
 try:
-    import PyQt5.QtNetworkAuth
+    import PyQt6.QtNetworkAuth
     optional_products.append("PyQtNetworkAuth")
 except ImportError:
     pass
 
 try:
-    import PyQt5.QtPurchasing
+    import PyQt6.QtPurchasing
     optional_products.append("PyQtPurchasing")
 except ImportError:
     pass
 
 try:
-    import PyQt5.Qsci
+    import PyQt6.Qsci
     optional_products.append("QScintilla")
 except ImportError:
     pass
@@ -146,7 +146,7 @@ class Model(QStandardItemModel):
 
         avail = "unavailable"
         try:
-            from PyQt5.QtNetwork import QSslSocket
+            from PyQt6.QtNetwork import QSslSocket
 
             if QSslSocket.supportsSsl():
                 avail = "available ({0})".format(
@@ -201,14 +201,14 @@ def create_qscintilla_code_view():
     """ Create a QScintilla based view containing a copy of this source code.
     """
 
-    from PyQt5.Qsci import QsciLexerPython, QsciScintilla
+    from PyQt6.Qsci import QsciLexerPython, QsciScintilla
 
     view = QsciScintilla()
     view.setReadOnly(True)
     view.setUtf8(True)
     view.setLexer(QsciLexerPython())
     view.setFolding(QsciScintilla.PlainFoldStyle)
-    view.setText(get_source_code())
+    view.setText("this is test...")
 
     return view
 
@@ -217,7 +217,7 @@ def create_fallback_code_view():
     """ Create a QTextEdit based view containing a copy of this source code.
     """
 
-    from PyQt5.QtWidgets import QTextEdit
+    from PyQt6.QtWidgets import QTextEdit
 
     view = QTextEdit(readOnly=True)
     view.setPlainText(get_source_code())
